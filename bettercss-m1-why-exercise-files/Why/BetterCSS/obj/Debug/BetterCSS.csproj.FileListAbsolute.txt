@@ -1,0 +1,5 @@
+D:\speaking\PS\BetterCSS\Examples\BetterCSS\bin\BetterCSS.dll
+D:\speaking\PS\BetterCSS\Examples\BetterCSS\bin\BetterCSS.pdb
+D:\speaking\PS\BetterCSS\Examples\BetterCSS\obj\Debug\ResolveAssemblyReference.cache
+D:\speaking\PS\BetterCSS\Examples\BetterCSS\obj\Debug\BetterCSS.dll
+D:\speaking\PS\BetterCSS\Examples\BetterCSS\obj\Debug\BetterCSS.pdb

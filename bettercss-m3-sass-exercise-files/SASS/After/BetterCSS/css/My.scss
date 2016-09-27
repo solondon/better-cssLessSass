@@ -1,0 +1,140 @@
+@import "init";
+@import "colors";
+@import "mixins";
+
+$baseSize: 14px;
+
+$app-size: 900px;
+
+@function center-width($gutter) {
+  @return $app-size - ($gutter * 2);
+}
+
+/* Basics */
+html
+{
+  font-family: 'Open Sans', verdana, helvetica, sans-serif;
+  font-size: $mainColor;
+  foo: "this is inline #{4 + 6} number";
+}
+body
+{
+  background: $mainColor;
+}
+h1
+{
+  font-size: $baseSize + 10;
+}
+h2
+{
+  font-size: $baseSize + 4;
+}
+h3
+{
+  font-size: $baseSize + 2;
+}
+
+@for $colNumber from 2 through 5 {
+  .col-#{$colNumber} {
+    width: ($app-size / $colNumber) - 10px;
+  }
+}
+
+/* Layout */
+#container
+{
+  margin-top:5px;
+  width: center-width(100px);
+  margin-left: auto;
+  margin-right: auto;
+  background: #FFF;
+  padding: 5px;
+  @include rounded-corners;
+  color: $mainColor;
+}
+
+/* Sections */
+header h1
+{
+  @extend nav;
+  font-size: 24px;
+  font-family: 'Share', cursive;
+  color: Blue;
+}
+nav
+{
+  font: {
+    size: 14px;
+    weight: bold;
+  }
+  float: right;
+  ul
+  {
+    list-style-type: none;
+    li
+    {
+      float: left;
+      margin: 2px;
+      a
+      {
+        text-decoration: none;
+        &:hover
+        {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+}
+footer
+{
+  font-size: 9px;
+  text-align: center;
+  color: Blue;
+  nav
+  {
+    float: none;
+    display: inline-block;
+    font-size: 9px;
+    vertical-align: middle;
+  }
+}
+
+/* Forms */
+#contact-form
+{
+  background: #f8f8f8;
+  width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  border: black 1px solid;
+  @include rounded-corners(15px);
+  padding: 5px;
+  color: lighten($mainColor, 50%);
+}
+#contact-form input[type=textbox], #contact-form textarea
+{
+  font-family: "Open Sans", Verdana, Helvetica, sans-serif;
+  font-size: 18px;
+  background: #ffffe0;
+  width: 250px;
+  display: block;
+  border: 1px #000 solid;
+  border-radius: 5px;
+  -moz-border-radius: 5px;
+  -webkit-border-radius: 5px;
+  padding: 2px;
+}
+#contact-form textarea
+{
+  height: 150px;
+  font-family: "Open Sans", Verdana, Helvetica, sans-serif;
+}
+#contact-form label
+{
+  width: 150px;
+}
+#contact-form .validation
+{
+  display: none;
+}
